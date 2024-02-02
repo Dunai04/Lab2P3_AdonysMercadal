@@ -12,8 +12,10 @@ import java.util.Scanner;
  * @author adony
  */
 public class Lab3P2AdonysMercadal {
-public static ArrayList<Pokemon> listaPokemon = new ArrayList();
-public static  ArrayList<Pokeball> listaPokeballs = new ArrayList();
+
+    public static ArrayList<Pokemon> listaPokemon = new ArrayList();
+    public static ArrayList<Pokeball> listaPokeballs = new ArrayList();
+
     /**
      * @param args the command line arguments
      */
@@ -37,7 +39,7 @@ public static  ArrayList<Pokeball> listaPokeballs = new ArrayList();
                     break;
                 case 2:
                     System.out.println("Creacion de Pokebola");
-                    listarP();
+
                     break;
                 case 3:
                     System.out.println("Listar Pokemons");
@@ -58,8 +60,9 @@ public static  ArrayList<Pokeball> listaPokeballs = new ArrayList();
             }
         }
     }
-    static void anadirP(){
-        String naturaleza ="";
+
+    static void anadirP() {
+        String naturaleza = "";
         boolean vivirF = false;
         Scanner n = new Scanner(System.in);
         System.out.println("Ingrese el Nombre del pokemon");
@@ -69,16 +72,16 @@ public static  ArrayList<Pokeball> listaPokeballs = new ArrayList();
         System.out.println("Ingrese La naturaleza del pokemon");
         System.out.println("1.Timido,2.Energetico,3.Misterioso");
         int opc = n.nextInt();
-        switch (opc){
+        switch (opc) {
             case 1:
-                   naturaleza = "Timido";
-                   break;
+                naturaleza = "Timido";
+                break;
             case 2:
-                   naturaleza = "Energetico";
-                   break;
+                naturaleza = "Energetico";
+                break;
             case 3:
-                  naturaleza = "Misteriosos";
-                  break;
+                naturaleza = "Misteriosos";
+                break;
             default:
                 System.out.println("No es una opcion");
                 break;
@@ -86,7 +89,7 @@ public static  ArrayList<Pokeball> listaPokeballs = new ArrayList();
         System.out.println("Ingrese el tipo del pokemon");
         System.out.println("1.Fuego,2.Agua,3.Planta");
         int opc2 = n.nextInt();
-        switch(opc2){
+        switch (opc2) {
             case 1:
                 System.out.println("Fuego");
                 System.out.println("Ingrese el poder de las llamas (numero)");
@@ -100,7 +103,7 @@ public static  ArrayList<Pokeball> listaPokeballs = new ArrayList();
                 System.out.println("Puede vivir fuera del agua? y/n");
                 n.nextLine();
                 String opc3 = n.nextLine();
-                switch (opc3){
+                switch (opc3) {
                     case "y":
                         vivirF = true;
                         break;
@@ -111,7 +114,7 @@ public static  ArrayList<Pokeball> listaPokeballs = new ArrayList();
                         break;
                 }
                 System.out.println("Ingrese rapidez al nadar(numero)");
-                int rapidezN= n.nextInt();
+                int rapidezN = n.nextInt();
                 nuevoP = new WaterType(vivirF, rapidezN, nombre, num, naturaleza, false);
                 listaPokemon.add(nuevoP);
                 System.out.println("Pokemon anadido");
@@ -122,8 +125,8 @@ public static  ArrayList<Pokeball> listaPokeballs = new ArrayList();
                 n.nextLine();
                 String habitat = n.nextLine();
                 System.out.println("Ingrese el domino de las plnatas (0-100)");
-                int dominoP= n.nextInt();
-                if (dominoP > 100 || dominoP < 0){
+                int dominoP = n.nextInt();
+                if (dominoP > 100 || dominoP < 0) {
                     System.out.println("Rango no valido");
                     break;
                 }
@@ -136,25 +139,33 @@ public static  ArrayList<Pokeball> listaPokeballs = new ArrayList();
                 break;
         }
     }
-    static void crearPokebola(){
-       
+
+    static void crearPokebola() {
+
     }
-    static void listarP(){
+
+    static void listarP() {
         System.out.println("Lista de Pokemons");
         System.out.println("Pokemon Tipo Fuego");
         for (Pokemon t : listaPokemon) {
             if (t instanceof FireType) {
                 System.out.println(t);
             }
-            
+
         }
         System.out.println("Pokemon Tipo Agua");
         for (Pokemon t : listaPokemon) {
             if (t instanceof WaterType) {
                 System.out.println(t);
             }
-            
+
         }
- 
+        System.out.println("Pokemon Tipo Planta");
+        for (Pokemon t : listaPokemon) {
+            if (t instanceof GrassType) {
+                System.out.println(t);
+            }
+
+        }
     }
 }
