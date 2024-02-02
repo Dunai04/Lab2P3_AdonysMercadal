@@ -39,7 +39,7 @@ public class Lab3P2AdonysMercadal {
                     break;
                 case 2:
                     System.out.println("Creacion de Pokebola");
-
+                    
                     break;
                 case 3:
                     System.out.println("Listar Pokemons");
@@ -47,6 +47,11 @@ public class Lab3P2AdonysMercadal {
                     break;
                 case 4:
                     System.out.println("Eliminar Pokemon");
+                    if (listaPokemon.isEmpty()) {
+                        System.out.println("La lista esta vacia");
+                        break;
+                    }
+                    eliminarL();
                     break;
                 case 5:
                     System.out.println("Capturar Pokemon");
@@ -149,23 +154,75 @@ public class Lab3P2AdonysMercadal {
         System.out.println("Pokemon Tipo Fuego");
         for (Pokemon t : listaPokemon) {
             if (t instanceof FireType) {
-                System.out.println(t);
+                System.out.println(listaPokemon.indexOf(t) + "-" + t);
             }
 
         }
         System.out.println("Pokemon Tipo Agua");
         for (Pokemon t : listaPokemon) {
             if (t instanceof WaterType) {
-                System.out.println(t);
+                System.out.println(listaPokemon.indexOf(t) + "-" + t);
             }
 
         }
         System.out.println("Pokemon Tipo Planta");
         for (Pokemon t : listaPokemon) {
             if (t instanceof GrassType) {
-                System.out.println(t);
+                System.out.println(listaPokemon.indexOf(t) + "-" + t);
             }
 
+        }
+    }
+
+    static void eliminarL() {
+        Scanner n = new Scanner(System.in);
+        System.out.println("Que tipo de pokemon quiere eliminar:\n"
+                + "1.Fuego,2.Agua,3.Planta");
+        int opc = n.nextInt();
+        switch (opc) {
+            case 1:
+                System.out.println("Pokemon Tipo Fuego");
+                for (Pokemon t : listaPokemon) {
+                    if (t instanceof FireType) {
+                        System.out.println(listaPokemon.indexOf(t) + "-" + t);
+                    }
+
+                }
+                elimina();
+                break;
+            case 2:
+                System.out.println("Pokemon Tipo Agua");
+                for (Pokemon t : listaPokemon) {
+                    if (t instanceof WaterType) {
+                        System.out.println(listaPokemon.indexOf(t) + "-" + t);
+                    }
+
+                }
+                elimina();
+                break;
+            case 3:
+                System.out.println("Pokemon Tipo Planta");
+                for (Pokemon t : listaPokemon) {
+                    if (t instanceof GrassType) {
+                        System.out.println(listaPokemon.indexOf(t) + "-" + t);
+                    }
+
+                }
+                elimina();
+                break;
+        }
+
+    }
+
+    static void elimina() {
+        Scanner n = new Scanner(System.in);
+        System.out.println("Ingrese el numero del pokemon que quiera eliminar");
+        int indi = n.nextInt();
+        if (indi >= 0 && indi < listaPokemon.size()) {
+            Pokemon eliminado = listaPokemon.remove(indi);
+            System.out.println("Has eliminado a " + eliminado + " del pokedex " + indi);
+        } else {
+            System.out.println("No valido");
         }
     }
 }
