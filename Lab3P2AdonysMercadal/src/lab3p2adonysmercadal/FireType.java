@@ -15,5 +15,18 @@ public class FireType extends Pokemon {
         super(nombre, numPoke, naturaleza, atrapado);
         this.poderLlamas = poderLlamas;
     }
+
+    public int getPoderLlamas() {
+        return poderLlamas;
+    }
+
+    public void setPoderLlamas(int poderLlamas) {
+        this.poderLlamas = poderLlamas;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
     
 }

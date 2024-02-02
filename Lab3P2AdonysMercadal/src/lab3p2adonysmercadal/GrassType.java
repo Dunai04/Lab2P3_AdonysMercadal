@@ -18,4 +18,25 @@ public class GrassType extends Pokemon {
         this.dominioPlantas = dominioPlantas;
     }
 
+    public String getHabitat() {
+        return habitat;
+    }
+
+    public void setHabitat(String habitat) {
+        this.habitat = habitat;
+    }
+
+    public int getDominioPlantas() {
+        return dominioPlantas;
+    }
+
+    public void setDominioPlantas(int dominioPlantas) {
+        this.dominioPlantas = dominioPlantas;
+    }
+
+    @Override
+    public String toString() {
+        return "GrassType{" + "habitat=" + habitat + ", dominioPlantas=" + dominioPlantas + '}';
+    }
+
 }

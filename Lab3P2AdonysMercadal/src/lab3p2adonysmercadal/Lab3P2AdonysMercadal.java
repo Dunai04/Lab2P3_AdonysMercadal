@@ -37,9 +37,11 @@ public static  ArrayList<Pokeball> listaPokeballs = new ArrayList();
                     break;
                 case 2:
                     System.out.println("Creacion de Pokebola");
+                    listarP();
                     break;
                 case 3:
                     System.out.println("Listar Pokemons");
+                    listarP();
                     break;
                 case 4:
                     System.out.println("Eliminar Pokemon");
@@ -96,6 +98,7 @@ public static  ArrayList<Pokeball> listaPokeballs = new ArrayList();
             case 2:
                 System.out.println("Agua");
                 System.out.println("Puede vivir fuera del agua? y/n");
+                n.nextLine();
                 String opc3 = n.nextLine();
                 switch (opc3){
                     case "y":
@@ -116,6 +119,7 @@ public static  ArrayList<Pokeball> listaPokeballs = new ArrayList();
             case 3:
                 System.out.println("Planta");
                 System.out.println("Ingrese el habitat del pokemon");
+                n.nextLine();
                 String habitat = n.nextLine();
                 System.out.println("Ingrese el domino de las plnatas (0-100)");
                 int dominoP= n.nextInt();
@@ -131,5 +135,26 @@ public static  ArrayList<Pokeball> listaPokeballs = new ArrayList();
                 System.out.println("Opcion no existe");
                 break;
         }
+    }
+    static void crearPokebola(){
+       
+    }
+    static void listarP(){
+        System.out.println("Lista de Pokemons");
+        System.out.println("Pokemon Tipo Fuego");
+        for (Pokemon t : listaPokemon) {
+            if (t instanceof FireType) {
+                System.out.println(t);
+            }
+            
+        }
+        System.out.println("Pokemon Tipo Agua");
+        for (Pokemon t : listaPokemon) {
+            if (t instanceof WaterType) {
+                System.out.println(t);
+            }
+            
+        }
+ 
     }
 }
