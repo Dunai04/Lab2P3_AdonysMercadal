@@ -12,13 +12,12 @@ import java.util.Scanner;
  * @author adony
  */
 public class Lab3P2AdonysMercadal {
-
+public static ArrayList<Pokemon> listaPokemon = new ArrayList();
+public static  ArrayList<Pokeball> listaPokeballs = new ArrayList();
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        ArrayList<Pokemon> listaPokemon = new ArrayList();
-        ArrayList<Pokeball> listaPokeballs = new ArrayList();
         Scanner s = new Scanner(System.in);
         int entrar = 1;
         while (entrar == 1) {
@@ -34,6 +33,7 @@ public class Lab3P2AdonysMercadal {
             switch (opc) {
                 case 1:
                     System.out.println("Creacion de Pokemon");
+                    anadirP();
                     break;
                 case 2:
                     System.out.println("Creacion de Pokebola");
@@ -56,5 +56,57 @@ public class Lab3P2AdonysMercadal {
             }
         }
     }
-
+    static void anadirP(){
+        String naturaleza ="";
+        Scanner n = new Scanner(System.in);
+        System.out.println("Ingrese el Nombre del pokemon");
+        String nombre = n.nextLine();
+        System.out.println("Ingrese el numero del pokemon");
+        int num = n.nextInt();
+        System.out.println("Ingrese La naturaleza del pokemon");
+        System.out.println("1.Timido,2.Energetico,3.Misterioso");
+        int opc = n.nextInt();
+        switch (opc){
+            case 1:
+                   naturaleza = "Timido";
+                   break;
+            case 2:
+                   naturaleza = "Energetico";
+                   break;
+            case 3:
+                  naturaleza = "Misteriosos";
+                  break;
+            default:
+                System.out.println("No es una opcion");
+                break;
+        }
+        System.out.println("Ingrese el tipo del pokemon");
+        System.out.println("1.Fuego,2.Agua,3.Planta");
+        int opc2 = n.nextInt();
+        switch(opc2){
+            case 1:
+                System.out.println("Fuego");
+                System.out.println("Ingrese el poder de las llamas (numero)");
+                int poder = n.nextInt();
+                Pokemon nuevoP = new FireType(poder, nombre, num, naturaleza, false);
+                listaPokemon.add(nuevoP);
+                break;
+            case 2:
+                System.out.println("Agua");
+                System.out.println("Puede vivir fuera del agua? y/n");
+                String opc3;
+                switch (){
+                    case "y":
+                        boolean vivirF = true;
+                        break;
+                }
+                break;
+            case 3:
+                System.out.println("Planta");
+                break;
+            default:
+                System.out.println("Opcion no existe");
+                break;
+        }
+    }
 }

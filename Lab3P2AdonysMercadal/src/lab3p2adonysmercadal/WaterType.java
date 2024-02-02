@@ -11,4 +11,12 @@ package lab3p2adonysmercadal;
 public class WaterType extends Pokemon{
     boolean puedeVivirTierra;
     int velocidadNadar;
+
+    public WaterType(boolean puedeVivirTierra, int velocidadNadar, String nombre, int numPoke, String naturaleza, boolean atrapado) {
+        super(nombre, numPoke, naturaleza, atrapado);
+        this.puedeVivirTierra = puedeVivirTierra;
+        this.velocidadNadar = velocidadNadar;
+    }
+
+    
 }

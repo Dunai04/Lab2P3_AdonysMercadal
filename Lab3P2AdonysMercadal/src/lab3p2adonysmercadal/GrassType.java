@@ -12,4 +12,10 @@ public class GrassType extends Pokemon {
     String habitat;
     int dominioPlantas;
 
+    public GrassType(String habitat, int dominioPlantas, String nombre, int numPoke, String naturaleza, boolean atrapado) {
+        super(nombre, numPoke, naturaleza, atrapado);
+        this.habitat = habitat;
+        this.dominioPlantas = dominioPlantas;
+    }
+
 }
