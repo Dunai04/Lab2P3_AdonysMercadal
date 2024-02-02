@@ -58,6 +58,7 @@ public static  ArrayList<Pokeball> listaPokeballs = new ArrayList();
     }
     static void anadirP(){
         String naturaleza ="";
+        boolean vivirF = false;
         Scanner n = new Scanner(System.in);
         System.out.println("Ingrese el Nombre del pokemon");
         String nombre = n.nextLine();
@@ -90,19 +91,41 @@ public static  ArrayList<Pokeball> listaPokeballs = new ArrayList();
                 int poder = n.nextInt();
                 Pokemon nuevoP = new FireType(poder, nombre, num, naturaleza, false);
                 listaPokemon.add(nuevoP);
+                System.out.println("Pokemon anadido");
                 break;
             case 2:
                 System.out.println("Agua");
                 System.out.println("Puede vivir fuera del agua? y/n");
-                String opc3;
-                switch (){
+                String opc3 = n.nextLine();
+                switch (opc3){
                     case "y":
-                        boolean vivirF = true;
+                        vivirF = true;
+                        break;
+                    case "n":
+                        vivirF = false;
+                    default:
+                        System.out.println("Opcion no valida");
                         break;
                 }
+                System.out.println("Ingrese rapidez al nadar(numero)");
+                int rapidezN= n.nextInt();
+                nuevoP = new WaterType(vivirF, rapidezN, nombre, num, naturaleza, false);
+                listaPokemon.add(nuevoP);
+                System.out.println("Pokemon anadido");
                 break;
             case 3:
                 System.out.println("Planta");
+                System.out.println("Ingrese el habitat del pokemon");
+                String habitat = n.nextLine();
+                System.out.println("Ingrese el domino de las plnatas (0-100)");
+                int dominoP= n.nextInt();
+                if (dominoP > 100 || dominoP < 0){
+                    System.out.println("Rango no valido");
+                    break;
+                }
+                nuevoP = new GrassType(habitat, dominoP, nombre, num, naturaleza, false);
+                listaPokemon.add(nuevoP);
+                System.out.println("Pokemon anadido");
                 break;
             default:
                 System.out.println("Opcion no existe");
