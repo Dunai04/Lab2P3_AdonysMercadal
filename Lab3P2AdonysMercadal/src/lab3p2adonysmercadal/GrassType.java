@@ -8,6 +8,8 @@ package lab3p2adonysmercadal;
  *
  * @author adony
  */
-public class GrassType {
-    
+public class GrassType extends Pokemon {
+    String habitat;
+    int dominioPlantas;
+
 }

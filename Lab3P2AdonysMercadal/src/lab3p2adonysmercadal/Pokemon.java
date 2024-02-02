@@ -9,10 +9,10 @@ package lab3p2adonysmercadal;
  * @author adony
  */
 public class Pokemon {
-    String nombre;
-    int numPoke;
-    String naturaleza;
-    boolean atrapado = false;
-    protected String pokeBola;
+    protected String nombre;
+    protected int numPoke;
+    protected String naturaleza;
+    protected boolean atrapado = false;
+    protected Pokeball pokeBola;
     
 }

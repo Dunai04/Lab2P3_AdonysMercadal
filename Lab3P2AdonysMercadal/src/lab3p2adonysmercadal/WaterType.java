@@ -8,6 +8,7 @@ package lab3p2adonysmercadal;
  *
  * @author adony
  */
-public class WaterType {
-    
+public class WaterType extends Pokemon{
+    boolean puedeVivirTierra;
+    int velocidadNadar;
 }

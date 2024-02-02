@@ -9,5 +9,8 @@ package lab3p2adonysmercadal;
  * @author adony
  */
 public class Pokeball {
+    String Color;
+    String numeroDeSerie;
+    int eficiencia;
     
 }

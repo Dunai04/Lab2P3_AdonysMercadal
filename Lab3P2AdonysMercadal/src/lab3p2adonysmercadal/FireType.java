@@ -8,6 +8,6 @@ package lab3p2adonysmercadal;
  *
  * @author adony
  */
-public class FireType {
-    
+public class FireType extends Pokemon {
+    int poderLlamas;
 }
