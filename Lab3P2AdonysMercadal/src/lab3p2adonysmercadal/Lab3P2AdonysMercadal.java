@@ -81,28 +81,30 @@ public class Lab3P2AdonysMercadal {
                                 randomPokemon.setPokeBola(bolaSele);
                                 System.out.println("Has atrapado a " + randomPokemon.getNombre());
                                 System.out.println("Q pro");
-                            }else{
-                                
-                            }
                                 break;
-                            case 2:
+                            } else {
+                                System.out.println("No se pudo atrapar a " + randomPokemon.getNombre());
+                            }
+                            listaPokeballs.remove(indi);
+                            break;
+                        case 2:
+                            System.out.println("A la proxima bro :(");
                             break;
                         default:
                             System.out.println("Opcion no valida");
                             break;
                     }
                     break;
-                        case 6:
-                            System.out.println("Modificar Pokemon");
-                            break;
-                        case 7:
-                            System.out.println("Saliendo...");
-                            entrar += 3;
-                    }
+                case 6:
+                    System.out.println("Modificar Pokemon");
+                    
+                    break;
+                case 7:
+                    System.out.println("Saliendo...");
+                    entrar += 3;
             }
         }
-
-    
+    }
 
     static void anadirP() {
         String naturaleza = "";
@@ -285,5 +287,8 @@ public class Lab3P2AdonysMercadal {
                 System.out.println(listaPokeballs.indexOf(t) + "-" + t);
             }
         }
+    }
+    static void modificarP(){
+        
     }
 }
