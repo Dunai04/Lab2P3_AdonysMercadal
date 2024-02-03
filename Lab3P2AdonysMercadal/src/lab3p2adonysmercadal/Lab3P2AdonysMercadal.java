@@ -97,7 +97,11 @@ public class Lab3P2AdonysMercadal {
                     break;
                 case 6:
                     System.out.println("Modificar Pokemon");
-                    
+                    if (listaPokemon.isEmpty()) {
+                        System.out.println("No hay Pokemons en la lista");
+                        break;
+                    }
+                    modificarP();
                     break;
                 case 7:
                     System.out.println("Saliendo...");
@@ -288,7 +292,92 @@ public class Lab3P2AdonysMercadal {
             }
         }
     }
-    static void modificarP(){
-        
+
+    static void modificarP() {
+        listarP();
+        Scanner n = new Scanner(System.in);
+        System.out.println("Seleccione el pokemon a modificar");
+        int indice = n.nextInt();
+        if (!listaPokemon.get(indice).isAtrapado()) {
+            System.out.println("El pokemon no esta atrapado aun");
+        } else {
+            if (listaPokemon.get(indice) instanceof FireType) {
+                System.out.println("Modificaciones disponibles");
+                System.out.println("1.Nombre");
+                System.out.println("2.Numero de Entrada de pokedex");
+                System.out.println("3.Potencia de llamas");
+                int opc3 = n.nextInt();
+                switch (opc3) {
+                    case 1:
+                        System.out.println("Ingrese el nuevo nombre");
+                        String nombre = n.nextLine();
+                        listaPokemon.get(indice).setNombre(nombre);
+                        break;
+                    case 2:
+                        System.out.println("Ingrese el nuevo numero del pokedex");
+                        int numP = n.nextInt();
+                        listaPokemon.get(indice).setNumPoke(numP);
+                        break;
+                    case 3:
+                        System.out.println("3");
+                }
+            }
+            if (listaPokemon.get(indice) instanceof WaterType) {
+                System.out.println("Modificaciones disponibles");
+                System.out.println("1.Nombre");
+                System.out.println("2.Numero de Entrada de pokedex");
+                System.out.println("3.Vivir fuera del agua");
+                int opc3 = n.nextInt();
+                switch (opc3) {
+                    case 1:
+                        System.out.println("Ingrese el nuevo nombre");
+                        String nombre = n.nextLine();
+                        listaPokemon.get(indice).setNombre(nombre);
+                        break;
+                    case 2:
+                        System.out.println("Ingrese el nuevo numero del pokedex");
+                        int numP = n.nextInt();
+                        listaPokemon.get(indice).setNumPoke(numP);
+                        break;
+                    case 3:
+                        System.out.println("Puede vivir fuera del agua? y/n");
+                        n.nextLine();
+                        String opc4 = n.nextLine();
+                        switch (opc4) {
+                            case "y":
+                                vivirF = true;
+                                break;
+                            case "n":
+                                vivirF = false;
+                            default:
+                                System.out.println("Opcion no valida");
+                                break;
+                        }
+                }
+            }
+            if (listaPokemon.get(indice) instanceof GrassType) {
+                System.out.println("Modificaciones disponibles");
+                System.out.println("1.Nombre");
+                System.out.println("2.Numero de Entrada de pokedex");
+                System.out.println("3.Habitat");
+                int opc3 = n.nextInt();
+                switch (opc3) {
+                    case 1:
+                        System.out.println("Ingrese el nuevo nombre");
+                        String nombre = n.nextLine();
+                        listaPokemon.get(indice).setNombre(nombre);
+                        break;
+                    case 2:
+                        System.out.println("Ingrese el nuevo numero del pokedex");
+                        int numP = n.nextInt();
+                        listaPokemon.get(indice).setNumPoke(numP);
+                        break;
+                    case 3:
+                        System.out.println("3");
+                }
+            }
+        }
+
     }
+
 }
