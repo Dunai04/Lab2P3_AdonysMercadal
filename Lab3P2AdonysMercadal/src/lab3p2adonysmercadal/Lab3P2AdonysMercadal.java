@@ -39,7 +39,7 @@ public class Lab3P2AdonysMercadal {
                     break;
                 case 2:
                     System.out.println("Creacion de Pokebola");
-                    
+
                     break;
                 case 3:
                     System.out.println("Listar Pokemons");
@@ -179,50 +179,64 @@ public class Lab3P2AdonysMercadal {
         System.out.println("Que tipo de pokemon quiere eliminar:\n"
                 + "1.Fuego,2.Agua,3.Planta");
         int opc = n.nextInt();
+        ArrayList<Pokemon> listaSeleccionada = new ArrayList<>();
         switch (opc) {
             case 1:
                 System.out.println("Pokemon Tipo Fuego");
                 for (Pokemon t : listaPokemon) {
                     if (t instanceof FireType) {
-                        System.out.println(listaPokemon.indexOf(t) + "-" + t);
+                        listaSeleccionada.add(t);
+                        System.out.println(listaSeleccionada.indexOf(t) + "-" + t);
                     }
-
                 }
-                elimina();
                 break;
             case 2:
                 System.out.println("Pokemon Tipo Agua");
                 for (Pokemon t : listaPokemon) {
                     if (t instanceof WaterType) {
-                        System.out.println(listaPokemon.indexOf(t) + "-" + t);
+                        listaSeleccionada.add(t);
+                        System.out.println(listaSeleccionada.indexOf(t) + "-" + t);
                     }
-
                 }
-                elimina();
                 break;
             case 3:
                 System.out.println("Pokemon Tipo Planta");
                 for (Pokemon t : listaPokemon) {
                     if (t instanceof GrassType) {
-                        System.out.println(listaPokemon.indexOf(t) + "-" + t);
+                        listaSeleccionada.add(t);
+                        System.out.println(listaSeleccionada.indexOf(t) + "-" + t);
                     }
-
                 }
-                elimina();
                 break;
         }
-
+        elimina(listaSeleccionada);
     }
 
-    static void elimina() {
+    static void elimina(ArrayList<Pokemon> listaSeleccionada) {
         Scanner n = new Scanner(System.in);
         System.out.println("Ingrese el numero del pokemon que quiera eliminar");
         int indi = n.nextInt();
-        if (indi >= 0 && indi < listaPokemon.size()) {
-            Pokemon eliminado = listaPokemon.remove(indi);
+        if (indi >= 0 && indi < listaSeleccionada.size()) {
+            Pokemon eliminado = listaSeleccionada.remove(indi);
+            listaPokemon.remove(eliminado);
             System.out.println("Has eliminado a " + eliminado + " del pokedex " + indi);
         } else {
             System.out.println("No valido");
         }
     }
+    static void crearBOLASBB(){
+        Scanner n = new Scanner(System.in);
+        System.out.println("Ingresar el color de la pokeBOLA");
+        String color = n.nextLine();
+        System.out.println("Ingresar el numero de serie de la bola");
+        String numeroS= n.nextLine();//ojito un numero de serie puede contener letras tambien :)
+        System.out.println("Ingresar el nivel de eficiencia(1-3)");
+        int efi = n.nextInt();
+        if (efi > 3 || efi < 1){
+            System.out.println("Nivel de eficiencia invalido");
+            return;
+        }
+        Pokeball nuevaBOLA = new Pokeball(color,numeroS,efi);
+        listaPokeballs.add(nuevaBOLA);
+}
 }
