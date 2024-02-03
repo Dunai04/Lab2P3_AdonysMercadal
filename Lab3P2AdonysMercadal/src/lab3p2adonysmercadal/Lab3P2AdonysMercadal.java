@@ -294,6 +294,7 @@ public class Lab3P2AdonysMercadal {
     }
 
     static void modificarP() {
+        boolean vivirF = true;
         listarP();
         Scanner n = new Scanner(System.in);
         System.out.println("Seleccione el pokemon a modificar");
@@ -310,16 +311,19 @@ public class Lab3P2AdonysMercadal {
                 switch (opc3) {
                     case 1:
                         System.out.println("Ingrese el nuevo nombre");
+                        n.nextLine();
                         String nombre = n.nextLine();
                         listaPokemon.get(indice).setNombre(nombre);
                         break;
                     case 2:
                         System.out.println("Ingrese el nuevo numero del pokedex");
+                         n.nextInt();
                         int numP = n.nextInt();
                         listaPokemon.get(indice).setNumPoke(numP);
                         break;
                     case 3:
-                        System.out.println("3");
+                        System.out.println("Ingresa la nueva potencia de flamas");
+                        int nPoten= n.nextInt();
                 }
             }
             if (listaPokemon.get(indice) instanceof WaterType) {
@@ -331,11 +335,13 @@ public class Lab3P2AdonysMercadal {
                 switch (opc3) {
                     case 1:
                         System.out.println("Ingrese el nuevo nombre");
+                        n.nextLine();
                         String nombre = n.nextLine();
                         listaPokemon.get(indice).setNombre(nombre);
                         break;
                     case 2:
                         System.out.println("Ingrese el nuevo numero del pokedex");
+                        n.nextInt();
                         int numP = n.nextInt();
                         listaPokemon.get(indice).setNumPoke(numP);
                         break;
@@ -364,16 +370,19 @@ public class Lab3P2AdonysMercadal {
                 switch (opc3) {
                     case 1:
                         System.out.println("Ingrese el nuevo nombre");
+                        n.nextLine();
                         String nombre = n.nextLine();
                         listaPokemon.get(indice).setNombre(nombre);
                         break;
                     case 2:
                         System.out.println("Ingrese el nuevo numero del pokedex");
+                         n.nextInt();
                         int numP = n.nextInt();
                         listaPokemon.get(indice).setNumPoke(numP);
                         break;
                     case 3:
-                        System.out.println("3");
+                        System.out.println("Ingresa el nuevo nombre del habitat");
+                        String nombreH= n.nextLine();
                 }
             }
         }

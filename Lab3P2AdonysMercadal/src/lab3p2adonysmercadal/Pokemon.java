@@ -67,7 +67,6 @@ public class Pokemon {
     public void setPokeBola(Pokeball pokeBola) {
         this.pokeBola = pokeBola;
     }
-   
 
     @Override
     public String toString() {
