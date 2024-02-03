@@ -5,6 +5,8 @@
 package lab3p2adonysmercadal;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 /**
  *
@@ -65,6 +67,7 @@ public class Pokemon {
     public void setPokeBola(Pokeball pokeBola) {
         this.pokeBola = pokeBola;
     }
+   
 
     @Override
     public String toString() {

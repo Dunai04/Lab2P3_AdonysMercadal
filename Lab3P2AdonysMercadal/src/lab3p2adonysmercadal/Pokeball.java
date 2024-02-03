@@ -22,6 +22,30 @@ public class Pokeball {
         this.eficiencia = eficiencia;
     }
 
+    public String getColor() {
+        return Color;
+    }
+
+    public void setColor(String Color) {
+        this.Color = Color;
+    }
+
+    public String getNumeroDeSerie() {
+        return numeroDeSerie;
+    }
+
+    public void setNumeroDeSerie(String numeroDeSerie) {
+        this.numeroDeSerie = numeroDeSerie;
+    }
+
+    public int getEficiencia() {
+        return eficiencia;
+    }
+
+    public void setEficiencia(int eficiencia) {
+        this.eficiencia = eficiencia;
+    }
+
     @Override
     public String toString() {
         return "Pokeball{" + "Color: " + Color + ", Numero: " + numeroDeSerie + ", Eficiencia: " + eficiencia + '}';

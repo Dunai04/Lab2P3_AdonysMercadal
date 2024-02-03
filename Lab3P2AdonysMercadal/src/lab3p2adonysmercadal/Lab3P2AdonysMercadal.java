@@ -6,12 +6,14 @@ package lab3p2adonysmercadal;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.Random;
 
 /**
  *
  * @author adony
  */
 public class Lab3P2AdonysMercadal {
+//carlos uwu
 
     public static ArrayList<Pokemon> listaPokemon = new ArrayList();
     public static ArrayList<Pokeball> listaPokeballs = new ArrayList();
@@ -39,7 +41,7 @@ public class Lab3P2AdonysMercadal {
                     break;
                 case 2:
                     System.out.println("Creacion de Pokebola");
-
+                    crearBOLASBB();
                     break;
                 case 3:
                     System.out.println("Listar Pokemons");
@@ -54,17 +56,53 @@ public class Lab3P2AdonysMercadal {
                     eliminarL();
                     break;
                 case 5:
+                    Scanner n = new Scanner(System.in);
                     System.out.println("Capturar Pokemon");
+                    if (listaPokeballs.isEmpty()) {
+                        System.out.println("No hay BOLAS en el inventario");
+                        break;
+                    }
+                    listarBOLAS();//hehehe BOLAS
+                    System.out.println("Selecciona la pokebola");
+                    int indi = n.nextInt();
+                    Pokeball bolaSele = listaPokeballs.get(indi);
+                    Pokemon randomPokemon;
+                    do {
+                        randomPokemon = listaPokemon.get(new Random().nextInt(listaPokemon.size()));
+                    } while (randomPokemon.isAtrapado());
+                    System.out.println("El pokemon " + randomPokemon.getNombre() + " ha aparcido");
+                    System.out.println("¿Quieres usar la pokeBOLA para capturar o huir? (1 capturar/ 2 huir)");
+                    int opc2 = n.nextInt();
+                    switch (opc2) {
+                        case 1:
+                            int posi = new Random().nextInt(3) + 1;
+                            if (posi <= bolaSele.getEficiencia()) {
+                                randomPokemon.setAtrapado(true);
+                                randomPokemon.setPokeBola(bolaSele);
+                                System.out.println("Has atrapado a " + randomPokemon.getNombre());
+                                System.out.println("Q pro");
+                            }else{
+                                
+                            }
+                                break;
+                            case 2:
+                            break;
+                        default:
+                            System.out.println("Opcion no valida");
+                            break;
+                    }
                     break;
-                case 6:
-                    System.out.println("Modificar Pokemon");
-                    break;
-                case 7:
-                    System.out.println("Saliendo...");
-                    entrar += 3;
+                        case 6:
+                            System.out.println("Modificar Pokemon");
+                            break;
+                        case 7:
+                            System.out.println("Saliendo...");
+                            entrar += 3;
+                    }
             }
         }
-    }
+
+    
 
     static void anadirP() {
         String naturaleza = "";
@@ -224,19 +262,28 @@ public class Lab3P2AdonysMercadal {
             System.out.println("No valido");
         }
     }
-    static void crearBOLASBB(){
+
+    static void crearBOLASBB() {
         Scanner n = new Scanner(System.in);
         System.out.println("Ingresar el color de la pokeBOLA");
         String color = n.nextLine();
         System.out.println("Ingresar el numero de serie de la bola");
-        String numeroS= n.nextLine();//ojito un numero de serie puede contener letras tambien :)
+        String numeroS = n.nextLine();//ojito un numero de serie puede contener letras tambien :)
         System.out.println("Ingresar el nivel de eficiencia(1-3)");
         int efi = n.nextInt();
-        if (efi > 3 || efi < 1){
+        if (efi > 3 || efi < 1) {
             System.out.println("Nivel de eficiencia invalido");
             return;
         }
-        Pokeball nuevaBOLA = new Pokeball(color,numeroS,efi);
+        Pokeball nuevaBOLA = new Pokeball(color, numeroS, efi);
         listaPokeballs.add(nuevaBOLA);
-}
+    }
+
+    static void listarBOLAS() {
+        for (Pokeball t : listaPokeballs) {
+            if (t instanceof Pokeball) {
+                System.out.println(listaPokeballs.indexOf(t) + "-" + t);
+            }
+        }
+    }
 }
